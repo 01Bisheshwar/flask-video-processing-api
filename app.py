@@ -1,5 +1,6 @@
 # Imports
 from flask import Flask, request
+from flask_cors import CORS
 from modules.setup_module import setup
 from modules.processing_module import process
 import os
@@ -9,6 +10,7 @@ setup()
 
 # Flask Instantiation
 app = Flask(__name__)
+CORS(app)
 
 # Routes
 @app.route("/", methods=['GET'])
