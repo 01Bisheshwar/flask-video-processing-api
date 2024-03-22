@@ -40,7 +40,7 @@ def processVideo(username, name):
         path = os.path.join("./static/", username + "/")
         print(path)
         # Run YOLO object detection
-        result = subprocess.run(['yolo', 'detect', 'predict', 'model=yolov8s.pt', 'source="' + path + name+'"'], capture_output=True, text=True)
+        result = subprocess.run(['yolo', 'detect', 'predict', 'model=yolov8n.pt', 'source="' + path + name+'"'], capture_output=True, text=True)
 
         if result.returncode != 0:
             # YOLO command failed, print error and command output
@@ -56,6 +56,9 @@ def processVideo(username, name):
             clip.write_videofile(output_video_path, codec='libx264', audio_codec='aac', preset='slow', bitrate='5000k')
 
             print("Video processing completed successfully!")
+
+            # DELETE THE VIDEOS AND DIRECTORIES LATER
+            # SEND THE VIDEO TO THE FRONTEND
     except Exception as e:
         print(f"Error processing video: {e}")
 
