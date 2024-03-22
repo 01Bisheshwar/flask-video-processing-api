@@ -23,11 +23,11 @@ def processController():
         print("Process GET Request")
         return {"status": True, "message": "Process GET Request"}
     elif request.method == "POST":
+        print("Process POST Request")
         print(request.files)
         video = request.files['video']
         video.save(os.path.join("static/videos", video.filename))
         process(video.filename)
-        print("Process POST Request")
         return {"status": True, "message": "Process POST Request"}
 
 if __name__ == "__main__":
