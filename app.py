@@ -24,7 +24,6 @@ def processController():
         return {"status": True, "message": "Process GET Request"}
     
     elif request.method == "POST":
-        '''
         # try:
             print("Process POST Request")
             print(request.files)
@@ -36,7 +35,6 @@ def processController():
             process(video.filename, username)
             return {"status": True, "message": "Process POST Requesttttt"}
         # except Err:
-        '''
 
     
 
