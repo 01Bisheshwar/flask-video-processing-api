@@ -45,6 +45,7 @@ def processVideo(username, name):
         if result.returncode != 0:
             # YOLO command failed, print error and command output
             print("YOLO command execution failed with error:")
+            print(result.returncode)
             print(result.stderr)
         else:
             # YOLO command succeeded, continue with video conversion
