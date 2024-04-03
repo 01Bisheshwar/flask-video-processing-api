@@ -40,7 +40,7 @@ def processVideo(username, name):
         path = os.path.join("./static/", username + "/")
         print(path)
         # Run YOLO object detection
-        result = subprocess.run(['yolo', 'detect', 'predict', 'model=yolov8s.pt', 'source="' + path + name+'"'], capture_output=True, text=True)
+        result = subprocess.run(f'yolo detect predict model=yolov8s.pt source=" '+path+name+'"'], capture_output=True, text=True)
 
         if result.returncode != 0:
             # YOLO command failed, print error and command output
