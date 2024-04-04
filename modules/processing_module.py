@@ -48,7 +48,7 @@ def processVideo(username, name):
             print("YOLO command execution failed with error:")
             print(result.returncode)
             print("my error is : ",result.stderr)
-            print('Error end's here')
+            print('Error ended')
         else:
             # YOLO command succeeded, continue with video conversion
             input_video_path = os.path.join("./runs/detect/predict", name.rsplit('.', 1)[0] + '.avi')
