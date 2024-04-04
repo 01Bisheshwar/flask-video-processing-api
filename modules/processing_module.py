@@ -37,11 +37,11 @@ import subprocess
 
 def processVideo(username, name):
     try:
-        path = os.path.join("static/", username + "/")
+        path = os.path.join("./static/", username + "/")
         print('Path : ',path)
         print('Name of file : ',name)
         # Run YOLO object detection
-        result = subprocess.run(['python', 'detect.py', '--source', path + name, '--weights', 'yolov5s.pt', '--device', 'cpu'], capture_output=True, text=True)
+        result = subprocess.run(['python', './detect.py', '--source', path + name, '--weights', './yolov5s.pt', '--device', 'cpu','--data', './data/coco128.yaml'], capture_output=True, text=True)
 
         if result.returncode != 0:
             # YOLO command failed, print error and command output
