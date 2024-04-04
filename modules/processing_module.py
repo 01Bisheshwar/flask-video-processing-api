@@ -38,7 +38,6 @@ import subprocess
 def processVideo(username, name):
     try:
         path = os.path.join("./static/", username + "/")
-        subprocess.run()
         print('Path : ',path)
         print('Name of file : ',name)
         # Run YOLO object detection
