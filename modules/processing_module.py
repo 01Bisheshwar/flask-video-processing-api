@@ -38,6 +38,7 @@ import subprocess
 def processVideo(username, name):
     try:
         path = os.path.join("./static/", username + "/")
+        print('Curr Dir : ',os.getcwd())
         print('Path : ',path)
         print('Name of file : ',name)
         # Run YOLO object detection
