@@ -45,7 +45,7 @@ def processVideo(username, name):
         print('Path : ',path)
         print('Name of file : ',name)
         # Run YOLO object detection
-        result = subprocess.run(['python', 'detect.py', '--source', './data/hyps/images/bus.jpg'], capture_output=True, text=True)
+        result = subprocess.run(['python', 'detect.py', '--source', './data/images/bus.jpg'], capture_output=True, text=True)
         print(os.listdir(os.getcwd()))
         print(os.listdir(os.path.join(os.getcwd(), 'runs')))
 
