@@ -39,10 +39,12 @@ def processVideo(username, name):
     try:
         path = os.path.join("./static/", username + "/")
         print('Curr Dir : ',os.getcwd())
+        print(os.listdir(os.getcwd()))
         print('Path : ',path)
         print('Name of file : ',name)
         # Run YOLO object detection
         result = subprocess.run(['python', 'detect.py', '--source', path + name], capture_output=True, text=True)
+        print(os.listdir(os.getcwd()))
 
         if result.returncode != 0:
             # YOLO command failed, print error and command output
