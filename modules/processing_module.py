@@ -2,6 +2,7 @@ import cv2
 import os
 from moviepy.editor import VideoFileClip
 import subprocess
+import shutil
 # from ultralytics import YOLO
 
 # def videoToFrames(video):
@@ -37,6 +38,18 @@ import subprocess
 
 def processVideo(username, name):
     try:
+        # Get disk usage statistics
+        total, used, free = shutil.disk_usage("/")
+
+        # Convert bytes to GB for better readability
+        total_gb = total / (2**30)
+        used_gb = used / (2**30)
+        free_gb = free / (2**30)
+
+        # Print disk usage information
+        print("Total Space: {:.2f} GB".format(total_gb))
+        print("Used Space: {:.2f} GB".format(used_gb))
+        print("Free Space: {:.2f} GB".format(free_gb))
         path1 = os.path.join(os.getcwd(), 'static')
         path = os.path.join(path1, username + "/")
         print('Curr Dir : ',os.getcwd())
